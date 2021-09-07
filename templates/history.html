@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>When</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td colspan="2"></td>
+                <td class="small text-center text-muted">Sold stocks have a " - " sign.</td>
+            </tr>
+        </tfoot>
+
+        <tbody>
+            {% for i in range(count) %}
+                {% set total = transactions[i]['shares'] * transactions[i]['price'] %}
+                {% set total = total|abs %}
+                <tr>
+                    <td>{{ transactions[i]['dnt'] }}</td>
+                    <td>{{ transactions[i]['symbol'] }}</td>
+                    <td>{{ transactions[i]['shares'] }}</td>
+                    <td>${{ transactions[i]['price'] }}</td>
+                    <td>${{ "%.2f"|format(total) }}</td>
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>${{ "%.2f"|format(current_user[0]['cash']) }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

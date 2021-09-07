@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+                <td colspan="3"></td>
+                <td>${{ "%.2f"|format(gtotal) }}</td>
+            </tr>
+        </tfoot>
+
+        <tbody>
+            {% for i in range(count) %}
+                {% set total = sym_shares[i]['SUM(shares)'] * current_prices[i] %}
+                <tr>
+                    <td>{{ sym_shares[i]['symbol'] }}</td>
+                    <td>{{ sym_shares[i]['SUM(shares)'] }}</td>
+                    <td>${{ current_prices[i] }}</td>
+                    <td>${{ "%.2f"|format(total) }}</td>
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <td>
+                    CASH
+                    <form action="/add_cash">
+                        <button class="btn btn-primary" type="submit">
+                            +
+                        </button>
+                    </form>
+                </td>
+                <td></td>
+                <td></td>
+                <td>${{ "%.2f"|format(current_cash) }}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

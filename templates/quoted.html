@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    A share of {{rows["name"]}} ({{rows["symbol"]}}) costs:
+    <br><br>
+    <h5>${{rows["price"]}}</h5>
+{% endblock %}

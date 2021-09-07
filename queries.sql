@@ -1,0 +1,13 @@
+CREATE TABLE 'users' (
+'id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+'username' TEXT NOT NULL, 
+'hash' TEXT NOT NULL, 
+'cash' NUMERIC NOT NULL DEFAULT 0.00 );
+
+CREATE TABLE "all_transactions" (
+'name' TEXT NOT NULL,
+'dnt' TEXT NOT NULL,
+'symbol' TEXT NOT NULL,
+'shares' INTEGER NOT NULL,
+'price' NUMERIC NOT NULL,
+FOREIGN KEY(name) REFERENCES users(username));
