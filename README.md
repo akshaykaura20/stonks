@@ -64,8 +64,4 @@ STONKS is a web application that provides real-time stock price quotes via Yahoo
 This app utilizes Yahoo Finance for real-time stock data retrieval. Ensure you comply with their usage policies.
 
 ## License
-This project is not licensed.
-
----
-
-This README provides a clear and professional overview of your project, including features, setup instructions, and important details about the tech stack and licensing.
+This project is not licensed. Only for educational purposes.
