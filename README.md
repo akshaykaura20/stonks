@@ -1,8 +1,6 @@
-Here's an enhanced and industry-standard README for your project:
-
----
-
 # STONKS: Real-Time Stock Quoting Web Application
+
+![STONKS Logo](Static/images/logo.png)
 
 STONKS is a web application that provides real-time stock price quotes via Yahoo Finance, allows users to simulate buying/selling stocks, and view their transaction history.
 
