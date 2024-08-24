@@ -1,22 +1,73 @@
-Project: STONKS
+Here's an enhanced and industry-standard README for your project:
 
-A web app to quote stock prices in real time via IEX API and dummy buy/ sell with transaction history.
+---
 
-Open photos folder to view page samples.
+# STONKS: Real-Time Stock Quoting Web Application
 
-Backend Language: Python (Flask)
-Structure/ Style Tools: HTML5, CSS3
-Frontend Language: JavaScript, Jinja Template language
-API: IEX Cloud stock quote
+STONKS is a web application that provides real-time stock price quotes via Yahoo Finance, allows users to simulate buying/selling stocks, and view their transaction history.
 
-Features:
+## Table of Contents
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Integration](#api-integration)
+- [License](#license)
 
-1. Register and Login user with hashed passwords.(Passwords are saved and matched using hash functions from the werkzeug.security module.)
+## Features
+- **User Authentication**: Register and login securely with hashed passwords using the `werkzeug.security` module.
+- **Real-Time Stock Quotes**: Fetch live stock prices by entering the stock symbol.
+- **Account Management**: Add funds to your account to simulate buying stocks.
+- **Stock Transactions**: Buy and sell stocks, with user-friendly interfaces for managing your portfolio.
+- **Transaction History**: View detailed records of all transactions with date and time.
 
-2. Allow user to quote stock prices by typing in the stock symbol.
+## Tech Stack
+- **Backend**: Flask (Python)
+- **Frontend**: HTML5, CSS3, JavaScript, Jinja2 Templates
+- **API**: Yahoo Finance
 
-3. Allow user to add cash into the account.
+## Installation
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/stonks.git
+   cd stonks
+   ```
 
-4. Allow user to dummy buy stocks and store that info in transactions history record with date & time, company, symbol and number of stocks bought with total cash in hand.
+2. **Create and activate a virtual environment**:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows use .venv\Scripts\activate
+   ```
 
-5. Allow user to sell owned stocks by selecting stock symbol from dropdown and store transaction history with a '-' sign.
+3. **Install the dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set up the database**:
+   ```bash
+   flask db upgrade
+   ```
+
+5. **Run the application**:
+   ```bash
+   flask run --host=0.0.0.0
+   ```
+
+## Usage
+1. **Register**: Create a new user account.
+2. **Login**: Access your account using your registered credentials.
+3. **Add Funds**: Deposit virtual currency to buy stocks.
+4. **Quote Stocks**: Enter a stock symbol to get the latest price.
+5. **Buy/Sell Stocks**: Execute trades and manage your portfolio.
+6. **View Transactions**: Monitor your buying and selling history.
+
+## API Integration
+This app utilizes Yahoo Finance for real-time stock data retrieval. Ensure you comply with their usage policies.
+
+## License
+This project is not licensed.
+
+---
+
+This README provides a clear and professional overview of your project, including features, setup instructions, and important details about the tech stack and licensing.

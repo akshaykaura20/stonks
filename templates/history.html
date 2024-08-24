@@ -18,8 +18,6 @@
 
         <tfoot>
             <tr>
-                <td colspan="2"></td>
-                <td class="small text-center text-muted">Sold stocks have a " - " sign.</td>
             </tr>
         </tfoot>
 
@@ -27,7 +25,7 @@
             {% for i in range(count) %}
                 {% set total = transactions[i]['shares'] * transactions[i]['price'] %}
                 {% set total = total|abs %}
-                <tr>
+                <tr class="{{ 'sold' if transactions[i]['shares'] < 0 else 'bought' }}">
                     <td>{{ transactions[i]['dnt'] }}</td>
                     <td>{{ transactions[i]['symbol'] }}</td>
                     <td>{{ transactions[i]['shares'] }}</td>
@@ -36,7 +34,7 @@
                 </tr>
             {% endfor %}
 
-            <tr>
+            <tr class="cash-row">
                 <td>CASH</td>
                 <td></td>
                 <td></td>

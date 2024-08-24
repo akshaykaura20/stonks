@@ -1,37 +1,70 @@
-nav .navbar-brand
-{
-    /* size for brand */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 767.98px) {
+    .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f8f9fa;
+        padding: 1rem;
+        z-index: 1000;
+    }
+}
+
+.navbar-brand {
+    margin-right: 30px;
+    text-decoration: none;
+    padding: 0px;
+}
+
+.navbar-logo {
+    max-height: 60px;
+    width: auto;
+}
+
+.stonks-text {
+    font-family: 'Courier';
+    font-weight: bold;
+    color: black;
+    font-size: 1.5rem;
+}
+/* nav .navbar-brand {
     font-size: xx-large;
 }
 
-/* colors for brand */
-nav .navbar-brand .blue
-{
+nav .navbar-brand .blue {
     color: #537fbe;
 }
-nav .navbar-brand .red
-{
+nav .navbar-brand .red {
     color: #ea433b;
 }
-nav .navbar-brand .yellow
-{
+nav .navbar-brand .yellow {
     color: #f5b82e;
 }
-nav .navbar-brand .green
-{
+nav .navbar-brand .green {
     color: #2e944b;
 }
-nav .navbar-brand .neon
-{
+nav .navbar-brand .neon {
     color: #2de7f5;
 }
-nav .navbar-brand .pink
-{
+nav .navbar-brand .pink {
     color: #fd02aa;
-}
+} */
 
-main .form-control
-{
+main .form-control {
     /* center form controls */
     display: inline-block;
 
@@ -39,17 +72,33 @@ main .form-control
     width: auto;
 }
 
-main
-{
+main {
     /* scroll horizontally as needed */
     overflow-x: auto;
 
     /* center contents */
     text-align: center;
+
+    flex: 1 0 auto;
 }
 
-main img
-{
+main img {
     /* constrain images on small screens */
     max-width: 100%;
+}
+
+.table .bought {
+    background-color: rgba(0, 255, 0, 0.1) !important; /* Light green */
+}
+
+.table .sold {
+    background-color: rgba(255, 0, 0, 0.1) !important; /* Light red */
+}
+
+.table .cash-row {
+    background-color: #f8f9fa !important; /* Light gray, or any color you prefer */
+}
+
+.footer {
+    flex-shrink: 0;
 }
